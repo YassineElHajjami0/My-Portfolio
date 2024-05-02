@@ -9,14 +9,10 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { AxesHelper, TextureLoader } from "three";
 import Setup from "./Setup";
 import { div } from "three/examples/jsm/nodes/Nodes.js";
+import { useGenerationStore } from "./context";
 
-const Avatar = ({
-  darkMode,
-  setDarkMode,
-}: {
-  darkMode: boolean;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
-}) => {
+const Avatar = () => {
+  const { darkMode } = useGenerationStore();
   const ref: any = useRef();
   const zarbia = new TextureLoader().load("images/zarbia3.png");
   return (
@@ -25,8 +21,8 @@ const Avatar = ({
       // className="absolute"
       className={`bg-gradient-to-b h-4 ${
         darkMode
-          ? " from-lightOne to-darkerOne "
-          : "from-[#3B7D8B] to-[#102125]"
+          ? "from-[#3B7D8B] to-[#102125]"
+          : " from-lightOne to-darkerOne "
       }`}
       camera={{ position: [0, 1.5, 9], fov: 30 }}
       style={{

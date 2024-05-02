@@ -17,10 +17,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const storedDarkMode = localStorage.getItem("darkMode");
-  const initialValue = storedDarkMode ? JSON.parse(storedDarkMode) : false;
-  const [darkMode, setDarkMode] = useState<boolean>(initialValue);
-
   return (
     <html lang="en">
       <head></head>

@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
 import Avatar from "./Avatar";
+import { useGenerationStore } from "./context";
 
 export default function Home() {
+  const { darkMode } = useGenerationStore();
+
   return (
     <main className="flex grow items-end">
       <div
@@ -15,7 +19,12 @@ export default function Home() {
           className="text-9xl font-extrabold text-shadow-lg"
           style={{
             fontFamily: "Beckan",
-            backgroundImage: "url('/images/glass.jpg')",
+            backgroundImage: `${
+              darkMode
+                ? "url(/images/blueGlass1.png)"
+                : "url('/images/glass.jpg')"
+            }`,
+            backgroundRepeat: "no-repeat",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -26,7 +35,11 @@ export default function Home() {
           className="text-5xl font-extrabold"
           style={{
             fontFamily: "Beckan",
-            backgroundImage: "url('/images/glass.jpg')",
+            backgroundImage: `${
+              darkMode
+                ? "url(/images/blueGlass1.png)"
+                : "url('/images/glass.jpg')"
+            }`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}

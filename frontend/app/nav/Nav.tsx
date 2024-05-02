@@ -11,7 +11,7 @@ const Nav = ({
   setDarkMode,
 }: {
   darkMode: boolean;
-  setDarkMode: (darkMode: boolean) => void;
+  setDarkMode: any;
 }) => {
   return (
     <div
@@ -25,11 +25,7 @@ const Nav = ({
             <div
               className="cursor-pointer w-[50px] h-[27px] rounded-3xl border-2 border-white p-[3px]"
               onClick={() => {
-                setDarkMode((prevState) => {
-                  const newState = !prevState;
-                  localStorage.setItem("darkMode", JSON.stringify(newState));
-                  return newState;
-                });
+                setDarkMode(!darkMode);
               }}
             >
               <FaBowlingBall
