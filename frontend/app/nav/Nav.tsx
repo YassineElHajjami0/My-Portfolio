@@ -11,7 +11,7 @@ const Nav = ({
   setDarkMode,
 }: {
   darkMode: boolean;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
+  setDarkMode: (darkMode: boolean) => void;
 }) => {
   return (
     <div
