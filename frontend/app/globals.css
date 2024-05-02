@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Beckan";
+  src: url("./Beckan.otf") format("opentype");
+  /* Add any additional font properties or styles here */
+}
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+  }
+}
+
+* {
+  @apply transition-colors duration-300;
+}

@@ -1,0 +1,105 @@
+ul {
+  width: 20%;
+  height: 40px;
+}
+
+ul li {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.Projects::before,
+.Projects::after {
+  content: "Projects";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  transition: 0.3s;
+}
+.Projects::before {
+  top: 0%;
+}
+.Projects::after {
+  top: 100%;
+}
+.Projects:hover::before {
+  top: -100%;
+}
+.Projects:hover::after {
+  top: 0;
+}
+.Blogs::before,
+.Blogs::after {
+  content: "Blogs";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transition: 0.3s;
+}
+.Blogs::before {
+  top: 0%;
+}
+.Blogs::after {
+  top: 100%;
+}
+.Blogs:hover::before {
+  top: -100%;
+}
+.Blogs:hover::after {
+  top: 0;
+}
+.Contact::before,
+.Contact::after {
+  content: "Contact";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.Contact::before {
+  top: 0%;
+}
+.Contact::after {
+  top: 100%;
+}
+.Contact:hover::before {
+  top: -100%;
+}
+.Contact:hover::after {
+  top: 0;
+}
+.ball {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes toRight {
+  0% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    transform: translateX(22px) rotateZ(300deg);
+    /* rotate: 20deg; */
+  }
+}
+@keyframes toLeft {
+  0% {
+    transform: translateX(22px) rotate(300deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    /* rotate: 20deg; */
+  }
+}
+
+.animate-toRight {
+  animation: toRight 1s forwards;
+}
+
+.animate-toLeft {
+  animation: toLeft 1s forwards;
+}
