@@ -2,19 +2,24 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
 import { ContactShadows, useGLTF } from "@react-three/drei";
-import { MeshProps } from "react-three-fiber";
+import { MeshProps, useFrame } from "react-three-fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { AxesHelper, TextureLoader } from "three";
 import Setup from "./Setup";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
 import { useGenerationStore } from "./context";
 
 const Avatar = () => {
   const { darkMode } = useGenerationStore();
   const ref: any = useRef();
   const zarbia = new TextureLoader().load("images/zarbia3.png");
+  const width = window.innerWidth;
+  let fov = 25;
+  if (width <= 425) {
+    fov = 35;
+  }
+
   return (
     <Canvas
       ref={ref}
@@ -24,14 +29,17 @@ const Avatar = () => {
           ? "from-[#3B7D8B] to-[#102125]"
           : " from-lightOne to-darkerOne "
       }`}
-      camera={{ position: [0, 1.5, 9], fov: 30 }}
+      camera={{
+        position: [1, 2.3, 9],
+        fov: fov,
+      }}
       style={{
         backgroundColor: "linear-gradient(to right, #C9CAC0 , #6A6A52)",
-        zIndex: -1,
+        zIndex: 2,
       }}
     >
       {/* <color attach="background" args={["rgba(0, 0, 0, 0)"]} /> */}
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       {/* <axesHelper args={[5]} /> {/* Pass size of the axes */}
       {/* <gridHelper args={[10, 10]} />  */}
       <group position-y={-0.2} rotation-y={-0.1}>

@@ -9,6 +9,9 @@ ul li {
   height: 100%;
   width: 100%;
 }
+.Projects {
+  text-align: right;
+}
 
 .Projects::before,
 .Projects::after {
@@ -102,4 +105,106 @@ ul li {
 
 .animate-toLeft {
   animation: toLeft 1s forwards;
+}
+.Burger {
+  width: 40px;
+  height: 15px;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 12;
+}
+.Burger span {
+  height: 3px;
+}
+
+.customMenu {
+  position: absolute;
+  width: 600px;
+  height: 100vh;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  top: 0;
+  z-index: 10;
+}
+
+.doAnimationIn {
+  animation: borderOut 0.5s 1 ease-out;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.doAnimationOut {
+  animation: borderIn 0.5s 1 ease-out;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+@keyframes borderOut {
+  0% {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    opacity: 0;
+  }
+  100% {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 1;
+  }
+}
+@keyframes borderIn {
+  0% {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 1;
+  }
+  100% {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    opacity: 0;
+  }
+}
+.showLi {
+  animation: showLi 1s 1 ease-out;
+}
+@keyframes showLi {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .Projects,
+  .Blogs,
+  .Contact,
+  .blogsContactContainer {
+    display: none;
+  }
+
+  .Burger {
+    display: flex;
+  }
+  .ulOfSwitcher,
+  .switcherContainer {
+    width: 50px;
+  }
+  .switcherContainer {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 425px) {
+  .customMenu {
+    position: absolute;
+    width: 300px;
+  }
+  .menuLinksContainer {
+    margin-top: 90px;
+  }
 }

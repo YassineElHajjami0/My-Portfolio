@@ -17,3 +17,109 @@
 * {
   @apply transition-colors duration-300;
 }
+
+.customContainer {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0 700px;
+}
+
+@media (max-width: 2265px) {
+  .customContainer {
+    padding: 0 300px;
+  }
+}
+@media (max-width: 1440px) {
+  .customContainer {
+    padding: 0 200px;
+  }
+  .firstName {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .customContainer {
+    padding: 0 100px;
+  }
+  .firstName {
+    font-size: 6rem;
+  }
+  .lastName {
+    font-size: 2.5rem;
+  }
+  .whatIcanDo {
+    font-size: 18px;
+    padding-bottom: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .firstName {
+    font-size: 5rem;
+  }
+  .whatIcanDo {
+    padding-bottom: 5rem;
+    width: 400px;
+  }
+}
+@media (max-width: 425px) {
+  .customContainer {
+    padding: 0px;
+  }
+  .firstName {
+    font-size: 4rem;
+  }
+  .whatIcanDo {
+    padding-bottom: 5rem;
+    width: 350px;
+  }
+  .iconsHolder {
+    padding: 6px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 425px) {
+  .frontend {
+    padding: 2px;
+  }
+}
+
+.upRightCircle,
+.centerLeftCircle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+.upRightCircle {
+  top: -15%;
+  right: -50%;
+}
+.centerLeftCircle {
+  left: -50%;
+  top: 20%;
+}
+
+.beigGradient {
+  background: radial-gradient(#6d6d55a8, #6b6b5457, #7b7b6500, #7b7b6500);
+}
+.bleuGradient {
+  background: radial-gradient(#65767b4e, #65767b29, #7b7b6500, #7b7b6500);
+}
+.bottomCircle {
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%);
+  background: radial-gradient(
+    #d5dadb35,
+    #d5dadb17,
+    #d5dadb03,
+    #d5dadb00,
+    #d5dadb00
+  );
+}

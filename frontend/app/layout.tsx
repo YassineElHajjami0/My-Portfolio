@@ -5,6 +5,8 @@ import "./globals.css";
 import { Poppins } from "@next/font/google";
 import React, { useState } from "react";
 import Childrens from "./childrens";
+import { motion, AnimatePresence } from "framer-motion";
+import { useGenerationStore } from "./context";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -17,11 +19,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const key = typeof window !== "undefined" ? window.location.pathname : null;
+  const { darkMode, setDarkMode } = useGenerationStore();
+
   return (
     <html lang="en">
       <head></head>
-      <body className={`w-screen h-screen ${poppins.className}`}>
-        <Childrens children={children} />{" "}
+      <body
+        className={`w-screen h-screen overflow-hidden ${
+          poppins.className
+        } bg-gradient-to-b ${
+          darkMode
+            ? "from-[#3B7D8B] to-[#102125]"
+            : " from-lightOne to-darkerOne "
+        }`}
+      >
+        <Childrens children={children} />
       </body>
     </html>
   );
