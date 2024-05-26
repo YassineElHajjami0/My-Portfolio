@@ -1,0 +1,185 @@
+.cardContainer {
+  transform: translateY(-10px);
+  opacity: 0;
+  animation: translateCards 1s ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+.cardContainer:hover {
+  transform: translateY(-5px);
+}
+.projectSection {
+  grid-template-columns: 1fr 1fr;
+  overflow-y: scroll;
+  overflow-x: visible;
+  scrollbar-width: none;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  scroll-behavior: smooth;
+}
+.projectSection .mouseAnimation {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  background-color: #fff;
+  z-index: 10;
+}
+.projectSection .mouseAnimation span {
+  position: absolute;
+
+  width: 30px;
+  height: 50px;
+  bottom: 50px;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* .projectSection .mouseAnimation::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  background-color: #000;
+  z-index: 1;
+  bottom: 0;
+} */
+.infoContainer {
+  opacity: 0;
+  transform: translateY(100%);
+  animation-name: translateProjectName;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  opacity: 1;
+}
+.showProjectName {
+  transform: translateY(80%);
+}
+.showAllInfo {
+  transform: translateY(0%);
+  z-index: 5;
+}
+/* .darkLayout {
+  z-index: 0;
+  background: linear-gradient(20deg, rgb(0, 0, 0), transparent);
+} */
+.blurLayout {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.iconUp {
+  rotate: -90deg;
+  transform: translateX(-2px);
+  animation: updown 2s ease infinite;
+}
+.iconDown {
+  transition: all 0.3s;
+  rotate: 90deg;
+  transform: translateX(2px);
+  animation: downUp 2s ease infinite;
+}
+@keyframes updown {
+  50% {
+    transform: translateX(2px);
+  }
+}
+@keyframes downUp {
+  50% {
+    transform: translateX(-2px);
+  }
+}
+@keyframes translateProjectName {
+  t 0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(80%);
+    opacity: 1;
+  }
+}
+@keyframes translateCards {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*
+.cardContainer:hover .infoContainer {
+  transition: all ease 0.8s;
+  height: 100%;
+  transform: translateY(0%);
+}
+.cardContainer:hover .projectImage {
+  transition: all ease 0.8s;
+  filter: blur(2px);
+  opacity: 1;
+} */
+
+@media (max-width: 3560px) {
+  .projectSection {
+    width: 700px;
+    height: 700px;
+  }
+}
+@media (max-width: 1440px) {
+  .projectSection {
+    width: 600px;
+    height: 600px;
+  }
+  .projectHeader {
+    font-size: 18px;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  .projectSection {
+    width: 500px;
+    height: 420px;
+    gap: 20px;
+  }
+  .cardContainer {
+    height: 240px;
+    grid-column: span 2;
+  }
+}
+@media (max-width: 768px) {
+  .projectSection {
+    height: 600px;
+    width: 430px;
+  }
+  .projectHeader {
+    font-size: 16px;
+  }
+  .cardContainer {
+    height: 270px;
+  }
+}
+@media (max-width: 425px) {
+  .projectSection {
+    width: 350px;
+    height: 400px;
+  }
+  .cardContainer {
+    height: 290px;
+  }
+}
+@media (max-width: 375px) {
+  .projectSection {
+    width: 320px;
+  }
+}
+@media (max-width: 320px) {
+  .projectSection {
+    width: 280px;
+  }
+}

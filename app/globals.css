@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Beckan";
+  src: url("./Beckan.otf") format("opentype");
+  /* Add any additional font properties or styles here */
+}
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+  }
+}
+
+* {
+  @apply transition-colors duration-300;
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.218);
+    color: rgba(255, 255, 255, 0.946);
+  }
+  cursor: none;
+}
+.canvasModel {
+  animation: showsmooth 10s ease;
+}
+@keyframes showsmooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #7b7b7b23;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+} */
+.lightBackground {
+  background-image: url("../public/images/tree1.jpg");
+  background-size: cover;
+}
+.darkBackground {
+  background-image: url("../public/images/tree2.jpg");
+  background-size: cover;
+}
+.customContainer {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 0 700px;
+}
+.firstName {
+  letter-spacing: -5px;
+}
+.showShadow {
+  text-shadow: 0 0 10px #fff;
+}
+.lastName {
+  letter-spacing: 4px;
+}
+.frontend {
+}
+@media (max-width: 2265px) {
+  .customContainer {
+    padding: 0 300px;
+  }
+}
+@media (max-width: 1440px) {
+  .customContainer {
+    padding: 0 200px;
+  }
+  .firstName {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .customContainer {
+    padding: 0 100px;
+  }
+  .firstName {
+    font-size: 6rem;
+  }
+  .lastName {
+    font-size: 2.5rem;
+  }
+  .whatIcanDo {
+    font-size: 18px;
+    padding-bottom: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .firstName {
+    font-size: 5rem;
+  }
+  .whatIcanDo {
+    padding-bottom: 5rem;
+    width: 400px;
+  }
+}
+@media (max-width: 425px) {
+  .customContainer {
+    padding: 0px;
+  }
+  .firstName {
+    font-size: 4rem;
+  }
+  .whatIcanDo {
+    padding-bottom: 5rem;
+    width: 350px;
+  }
+  .iconsHolder {
+    padding: 6px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 425px) {
+  .frontend {
+    padding: 2px;
+  }
+}
+
+.beigGradient {
+  background: radial-gradient(#6d6d55a8, #6b6b5457, #7b7b6500, #7b7b6500);
+}
+.bleuGradient {
+  background: radial-gradient(#65767b4e, #65767b29, #7b7b6500, #7b7b6500);
+}
+.bottomCircle {
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%);
+  background: radial-gradient(
+    #d5dadb35,
+    #d5dadb17,
+    #d5dadb03,
+    #d5dadb00,
+    #d5dadb00
+  );
+}
+
+.followCursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: -100%;
+  transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  mix-blend-mode: difference;
+}
+
+.LogoHolder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  fill-opacity: 0;
+}
+
+#logo path {
+  stroke: rgba(255, 255, 255, 0.723);
+  stroke-width: 25px;
+  stroke-dasharray: 7500;
+  animation: draw 15s ease;
+}
+
+@keyframes draw {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 8500;
+  }
+  2% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    stroke-dashoffset: 0;
+    fill: white;
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.showIt {
+  opacity: 0;
+  animation: showFooter 1s ease;
+  opacity: 1;
+}
+.customFooter {
+  opacity: 0;
+  animation: showFooter 1s ease;
+  opacity: 1;
+}
+@keyframes showFooter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

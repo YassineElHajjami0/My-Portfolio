@@ -1,0 +1,137 @@
+.letsTalkContainer {
+  overflow: hidden;
+}
+.letsTalk {
+  line-height: 0.8;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    #5c5c5c
+  ); /* Replace with your desired gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+/* .letsTalkSpan {
+  opacity: 0;
+  animation: showItAfterDelay 3s ease 3s;
+  opacity: 1;
+}
+@keyframes showItAfterDelay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+.char {
+  transform: translateY(100px);
+  transition: 0.5s;
+}
+.entry {
+  opacity: 0;
+  animation: showIt 1s ease;
+  opacity: 1;
+}
+@keyframes showIt {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 1024px) {
+  .contactSection {
+    width: 500px;
+    z-index: 30;
+  }
+  .letsTalk {
+    font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  .contactSection {
+    width: 420px;
+  }
+  .responseDiv {
+    margin-bottom: -40px;
+  }
+}
+@media (max-width: 425px) {
+  .contactSection {
+    width: 320px;
+  }
+  .customInput,
+  .customInputArea {
+    padding: 8px;
+  }
+  .customInputArea {
+    height: 150px;
+  }
+  .responseDiv {
+    width: 300px;
+    margin-bottom: -70px;
+  }
+}
+@media (max-width: 375px) {
+  .responseDiv {
+    width: 270px;
+    margin-bottom: -70px;
+  }
+  .contactSection {
+    width: 300px;
+  }
+}
+@media (max-width: 320px) {
+  .contactSection {
+    width: 280px;
+  }
+}
+.sendButton {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.sendButton::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-conic-gradient(
+    #ffffff 0%,
+    #ffffff 5%,
+    transparent 5%,
+    transparent 40%,
+    #ffffff 50%
+  );
+  z-index: -1;
+  animation: sendRotaion 5s linear infinite;
+}
+.sendButton:hover::before {
+  animation: sendRotaion 1s linear infinite;
+}
+.sendBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  height: 97%;
+  z-index: -1;
+  border-radius: inherit;
+}
+@keyframes sendRotaion {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 180deg;
+  }
+}
