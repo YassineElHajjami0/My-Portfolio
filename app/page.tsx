@@ -15,25 +15,17 @@ const jakarta = Plus_Jakarta_Sans({
 export default function Home() {
   const { darkMode } = useGenerationStore();
   const [showName, setShowName] = useState(false);
-  const [firstLoad, setFirstLoad] = useState(true);
   useEffect(() => {
-    let timeoutDuration = 1000;
-
-    if (firstLoad) {
-      timeoutDuration = 12500;
-    }
-
     setTimeout(() => {
       setShowName(true);
-      setFirstLoad(false);
-    }, timeoutDuration);
+    }, 1500);
   }, []);
 
   return (
     <main className="flex-grow items-end ">
       <div
         style={{ zIndex: -1 }}
-        className="absolute w-full h-[100%] top-0 left-0  bg-gray-500"
+        className={`absolute w-full h-[100%] top-0 left-0   bg-gray-500`}
       >
         <AuroraBackground children={<Avatar />} />
       </div>

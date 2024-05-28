@@ -67,6 +67,13 @@
 }
 .frontend {
 }
+
+.icon {
+  font-size: 25px;
+  /* border: 1px solid white; */
+  box-sizing: content-box;
+  padding: 5px;
+}
 @media (max-width: 2265px) {
   .customContainer {
     padding: 0 300px;

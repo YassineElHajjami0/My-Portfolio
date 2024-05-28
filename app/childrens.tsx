@@ -2,7 +2,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import Nav from "./nav/Nav";
 import Link from "next/link";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaMedium } from "react-icons/fa6";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useGenerationStore } from "./context";
@@ -89,39 +89,34 @@ const Childrens = ({ children }: { children: React.ReactNode }) => {
         {children}
         <footer className="customFooter z-[4]">
           <div
-            className={`text-center iconsHolder p-2 px-4
-            flex gap-3 text-2xl text-white ${
-              darkMode
-                ? "bg-[#a4c0c96d] hover:bg-[#9dabae39]"
-                : "bg-[#b1b2a87e] hover:bg-[#aeae9d3a]"
-            }  border-[0.5px] border-white border-solid rounded-lg mb-4
+            className={`text-center iconsHolder 
+            flex gap-1 text-2xl text-white
+              bg-[#bec9cc6d] hover:bg-[#a0a3a439]"
+               border-[0.5px] border-white border-solid rounded-lg mb-4
             duration-300`}
           >
-            <Link href="https://twitter.com/yassine_el01">
-              <FaXTwitter
-                className={`icon  ${
-                  darkMode
-                    ? "hover:text-[#73858c] transition duration-100"
-                    : "hover:text-[#d1d1c7] transition duration-100"
-                }`}
+            <Link
+              href="https://medium.com/@yassineelhajjamidev"
+              target="_blank"
+            >
+              <FaMedium
+                className={`icon
+                  hover:text-[#cacbcb] transition duration-100`}
               />
             </Link>
-            <Link href="https://github.com/YassineElHajjami0">
+            <Link href="https://github.com/YassineElHajjami0" target="_blank">
               <AiFillGithub
-                className={` icon ${
-                  darkMode
-                    ? "hover:text-[#73858c] transition duration-100"
-                    : "hover:text-[#d1d1c7] transition duration-100"
-                }`}
+                className={`icon
+                 hover:text-[#cacbcb] transition duration-100`}
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/yassine-el-hajjami-281446295/">
+            <Link
+              href="https://www.linkedin.com/in/yassine-el-hajjami-281446295/"
+              target="_blank"
+            >
               <FaLinkedinIn
-                className={`icon ${
-                  darkMode
-                    ? "hover:text-[#73858c] transition duration-100"
-                    : "hover:text-[#d1d1c7] transition duration-100"
-                }`}
+                className={`icon
+                  hover:text-[#cacbcb] transition duration-100`}
               />
             </Link>
           </div>

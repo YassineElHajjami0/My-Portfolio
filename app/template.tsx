@@ -2,21 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { animatePageIn } from "./animations";
 import { useGenerationStore } from "./context";
-{
-  /* <div
-  className={`upRightCircle ${
-    darkMode ? "bleuGradient" : "beigGradient"
-  }`}
-></div>
-<div
-  className={`centerLeftCircle ${
-    darkMode ? "bleuGradient" : "beigGradient"
-  }`}
-></div> */
-}
-{
-  /* <div className={`bottomCircle `}></div> */
-}
 
 const Template = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {

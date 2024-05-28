@@ -1,8 +1,12 @@
+"use client";
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { MeshBasicMaterial, TextureLoader } from "three";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("models/final.glb");
+  const { nodes, materials } = useGLTF("models/mysetup.glb");
+  const textureScreen = new TextureLoader().load("images/glass.jpg");
+  const zarbia = new TextureLoader().load("images/Screen3.png");
   return (
     <group
       {...props}
@@ -13,6 +17,17 @@ export default function Model(props) {
       position-z={0.7}
       rotation-y={0.8}
     >
+      <mesh
+        scale={[0.72, 1.3, 2]}
+        rotation-x={-12.55}
+        rotation-z={-1.58}
+        position-y={2.65}
+        position-x={0.71}
+        position-z={-2.67}
+      >
+        <planeGeometry />
+        <meshBasicMaterial map={zarbia} transparent={true} />
+      </mesh>
       <group
         name="Sit001"
         position={[0.851, 1.689, -0.502]}
@@ -130,9 +145,6 @@ export default function Model(props) {
         scale={2.279}
       />
       <group
-        onClick={() => {
-          console.log("HI");
-        }}
         name="Suporte_base"
         position={[0.713, 2.572, -2.852]}
         rotation={[0.089, 0, 0]}
@@ -150,13 +162,6 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder002_1.geometry}
-          material={materials.Body}
-        />
-        <mesh
-          name="Cylinder002_2"
-          castShadow
-          receiveShadow
-          geometry={nodes.Cylinder002_2.geometry}
           material={materials.Body}
         />
       </group>
@@ -320,8 +325,18 @@ export default function Model(props) {
         material={materials["Material.001"]}
         position={[0.661, 1.96, -2.114]}
       />
+      <mesh
+        name="myscreen"
+        castShadow
+        receiveShadow
+        geometry={nodes.myscreen.geometry}
+        material={materials.Screen}
+        position={[0.713, 2.572, -2.852]}
+        rotation={[0.089, 0, 0]}
+        scale={2.279}
+      />
     </group>
   );
 }
 
-useGLTF.preload("models/setup.glb");
+useGLTF.preload("models/mysetup.glb");

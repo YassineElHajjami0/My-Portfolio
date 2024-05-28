@@ -20,26 +20,52 @@
   scroll-behavior: smooth;
 }
 .projectSection .mouseAnimation {
-  position: relative;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute;
   width: 30px;
   height: 50px;
-  background-color: #fff;
-  z-index: 10;
+  background: #ebebeb;
+  border-radius: 20px;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 60px 10px white;
+  animation: showmousescroll 3s ease;
+  animation-iteration-count: 2;
+  animation-delay: 8s;
+  opacity: 0;
 }
 .projectSection .mouseAnimation span {
   position: absolute;
 
-  width: 30px;
-  height: 50px;
-  bottom: 50px;
-  background: #fff;
-  border-radius: 20px;
+  width: 4px;
+  height: 12px;
+  border-radius: 10px;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9c9595ca;
   z-index: 1;
+  animation: mousescroll 2s linear infinite;
 }
-
+@keyframes mousescroll {
+  50% {
+    top: 20%;
+  }
+}
+@keyframes showmousescroll {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /* .projectSection .mouseAnimation::before {
   content: "";
   position: absolute;

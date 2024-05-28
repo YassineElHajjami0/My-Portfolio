@@ -3,13 +3,10 @@
 }
 .letsTalk {
   line-height: 0.8;
-  background-image: linear-gradient(
-    to right,
-    #ffffff,
-    #5c5c5c
-  ); /* Replace with your desired gradient colors */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #5c5c5c);
+  background-clip: text;
+  background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
   position: relative;
 }
 /* .letsTalkSpan {
@@ -116,6 +113,9 @@
 }
 .sendButton:hover::before {
   animation: sendRotaion 1s linear infinite;
+}
+.sendButton:active::before {
+  animation: sendRotaion 0.2s linear infinite;
 }
 .sendBackground {
   position: absolute;

@@ -23,10 +23,6 @@ const Avatar = () => {
   return (
     <Canvas
       ref={ref}
-      // className="absolute"
-      // className={` h-4 ${
-      //   darkMode ? " bg-[#030303]" : " from-lightOne to-darkerOne "
-      // }`}
       camera={{
         position: [1, 2.3, 9],
         fov: fov,
@@ -37,8 +33,17 @@ const Avatar = () => {
       }}
     >
       {/* <color attach="background" args={["rgba(0, 0, 0, 0)"]} /> */}
-      {/* <OrbitControls /> */}
-      {/* <axesHelper args={[5]} /> {/* Pass size of the axes */}
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={true}
+        minPolarAngle={1.37}
+        maxPolarAngle={1.5}
+        minAzimuthAngle={Math.PI / 190}
+        maxAzimuthAngle={Math.PI / 6.2}
+      />
+      {/* <axesHelper args={[5]} /> */}
+      {/* Pass size of the axes
       {/* <gridHelper args={[10, 10]} />  */}
       <group position-y={-0.2} rotation-y={-0.1}>
         <ContactShadows
@@ -50,7 +55,8 @@ const Avatar = () => {
           color="#000000"
         />
         <Model />
-        <Setup /> <directionalLight position={[10, 8, 20]} intensity={4} />
+        <Setup />
+        <directionalLight position={[10, 8, 20]} intensity={4} />
         <ambientLight intensity={1} />
         <mesh scale={[0.7, 0.85, 0.7]} rotation-y={0.9}>
           {/* <boxGeometry /> */}
@@ -62,6 +68,7 @@ const Avatar = () => {
           rotation-x={-Math.PI / 2}
           rotation-z={-0.8}
           position-y={-0.001}
+          position-x={-0.2}
         >
           <planeGeometry />
           <meshBasicMaterial map={zarbia} transparent={true} />
