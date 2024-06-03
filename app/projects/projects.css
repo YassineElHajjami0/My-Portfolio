@@ -10,10 +10,12 @@
   transform: translateY(-5px);
 }
 .projectSection {
+  padding: 5px;
   grid-template-columns: 1fr 1fr;
   overflow-y: scroll;
   overflow-x: visible;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.727) rgba(133, 137, 133, 0.011);
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -29,9 +31,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 60px 10px white;
-  animation: showmousescroll 3s ease;
+  animation: showmousescroll 2s ease;
   animation-iteration-count: 2;
-  animation-delay: 8s;
+  animation-delay: 1s;
   opacity: 0;
 }
 .projectSection .mouseAnimation span {

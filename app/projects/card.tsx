@@ -39,13 +39,11 @@ const Card = ({
       } cursor-pointer h-[270px] relative rounded-xl overflow-hidden`}
       onClick={() => setShowDetails(!showdetails)}
     >
-      {/* <Image
-        className="projectImage rounded-lg"
-        src={project.image}
-        width={400}
-        height={200}
-        alt={project.name.toUpperCase()}
-      /> */}
+      {!project.done && (
+        <div className="soon font-medium absolute text-white z-10 right-0 bg-[#3634347a] p-2 rounded-bl-xl">
+          soon
+        </div>
+      )}
       <div
         className={`darkLayout  z-0 absolute w-full h-full ba bg-gradient-to-tr ${
           darkMode
@@ -69,41 +67,47 @@ const Card = ({
         <p className={` ${darkMode ? "text-[#e8e8e8df]" : "text-[#efefef] "}`}>
           {project.description}
         </p>
-        <div className="tools flex gap-2 flex-wrap text-white py-1">
-          {project.tools.map((tool) => (
-            <span
-              className={`p-1 rounded-md ${
-                darkMode ? "bg-[#e2e6e75d]" : "bg-[#c2c2aac8]"
-              }`}
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
-        <div className=" flex-grow  items-end flex  justify-center gap-3 text-white p-2">
-          {project.thereIsDemo && (
-            <Link
-              href={project.demo}
-              className={` transition-all duration-300 p-2 rounded-xl ${
-                darkMode
-                  ? "bg-[#e6e6e62f] hover:bg-[#e6e6e647]"
-                  : "bg-[#949473] hover:bg-[#aeae88]"
-              }  `}
-            >
-              Demo
-            </Link>
-          )}
-          <Link
-            href={project.code}
-            className={` transition-all duration-300 p-2 rounded-xl ${
-              darkMode
-                ? "bg-[#e6e6e62f] hover:bg-[#e6e6e647]"
-                : "bg-[#949473] hover:bg-[#aeae88]"
-            }  `}
-          >
-            Code
-          </Link>
-        </div>
+        {project.done && (
+          <>
+            <div className="tools flex gap-2 flex-wrap text-white py-1">
+              {project.tools.map((tool) => (
+                <span
+                  className={`p-1 rounded-md ${
+                    darkMode ? "bg-[#e2e6e75d]" : "bg-[#c2c2aac8]"
+                  }`}
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+            <div className=" flex-grow  items-end flex  justify-center gap-3 text-white p-2">
+              {project.thereIsDemo && (
+                <Link
+                  target="_blank"
+                  href={project.demo}
+                  className={` transition-all duration-300 p-2 rounded-xl ${
+                    darkMode
+                      ? "bg-[#e6e6e62f] hover:bg-[#e6e6e647]"
+                      : "bg-[#949473] hover:bg-[#aeae88]"
+                  }  `}
+                >
+                  Demo
+                </Link>
+              )}
+              <Link
+                target="_blank"
+                href={project.code}
+                className={` transition-all duration-300 p-2 rounded-xl ${
+                  darkMode
+                    ? "bg-[#e6e6e62f] hover:bg-[#e6e6e647]"
+                    : "bg-[#949473] hover:bg-[#aeae88]"
+                }  `}
+              >
+                Code
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

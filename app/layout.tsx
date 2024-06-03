@@ -22,7 +22,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const key = typeof window !== "undefined" ? window.location.pathname : null;
   const { darkMode, setDarkMode } = useGenerationStore();
 
   return (
@@ -45,13 +44,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-/* 
-{`
-  @font-face {
-    font-family: 'Beckan';
-    src: url('/Beckan.otf') format('opentype');
-    /* Add any additional font properties or styles here 
-  }
-`}
-*/

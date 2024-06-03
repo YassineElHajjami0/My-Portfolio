@@ -1,12 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import {
-  ContactShadows,
-  useAnimations,
-  useFBX,
-  useGLTF,
-} from "@react-three/drei";
-import { useFrame } from "react-three-fiber";
+import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import "./globals.css";
 
 export function Model(props) {
@@ -25,14 +19,6 @@ export function Model(props) {
     group.current.position.x = -0.08;
     group.current.position.z = 0.2;
   }, []);
-  // useFrame(() => {
-  //   if (group.current) {
-  //     group.current.rotation.y += 0.01;
-  //     group.current.rotation.x = 1.5;
-  //     group.current.rotation.z = 0.8;
-  //     console.log(group.current.rotation.y); // Adjust the rotation speed as needed
-  //   }
-  // });
   return (
     <group dispose={null} ref={group} className="canvasModel">
       <group>

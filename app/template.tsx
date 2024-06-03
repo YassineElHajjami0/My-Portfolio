@@ -10,7 +10,6 @@ const Template = ({ children }: { children: React.ReactNode }) => {
   const { darkMode } = useGenerationStore();
   const [positionCursor, setPositionCursor] = useState({ x: "", y: "" });
   const handleMouseMove = (e: MouseEvent) => {
-    console.log(positionCursor);
     setPositionCursor({
       x: (e.clientX + 5).toString().concat("px"),
       y: (e.clientY - 5).toString().concat("px"),

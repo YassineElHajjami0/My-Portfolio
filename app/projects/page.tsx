@@ -30,7 +30,6 @@ const Projects = () => {
   const fetchBlogs = async () => {
     const quer = query(collection(db, "Projects"), orderBy("time"));
     const querySnapshot = await getDocs(quer);
-    console.log("query Snapshot : ", querySnapshot);
     const data: projectInterface[] = [];
     querySnapshot.forEach((doc) => {
       data.push({ ...(doc.data() as projectInterface) });

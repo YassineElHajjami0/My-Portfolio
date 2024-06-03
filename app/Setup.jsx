@@ -5,7 +5,6 @@ import { MeshBasicMaterial, TextureLoader } from "three";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("models/mysetup.glb");
-  const textureScreen = new TextureLoader().load("images/glass.jpg");
   const zarbia = new TextureLoader().load("images/Screen3.png");
   return (
     <group

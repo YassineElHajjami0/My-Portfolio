@@ -6,19 +6,25 @@ import { MeshProps, useFrame } from "react-three-fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { AxesHelper, TextureLoader } from "three";
+import { AxesHelper, Texture, TextureLoader } from "three";
 import Setup from "./Setup";
 import { useGenerationStore } from "./context";
 
 const Avatar = () => {
   const { darkMode } = useGenerationStore();
   const ref: any = useRef();
-  const zarbia = new TextureLoader().load("images/zarbia3.png");
-  const width = window.innerWidth;
-  let fov = 25;
-  if (width <= 425) {
-    fov = 35;
-  }
+
+  // let zarbia;
+  const [zarbia, setZarbia] = useState<Texture>();
+  const [fov, setFov] = useState<number>(25);
+  useEffect(() => {
+    const loadZarbia = new TextureLoader().load("images/zarbia3.png");
+    setZarbia(loadZarbia);
+    const width = window.innerWidth;
+    if (width <= 425) {
+      setFov(35);
+    }
+  }, []);
 
   return (
     <Canvas

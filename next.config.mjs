@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -8,7 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  presets: ["next/babel"],
 };
 
 export default nextConfig;
