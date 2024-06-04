@@ -11,7 +11,7 @@ const Template = ({ children }: { children: React.ReactNode }) => {
   const [positionCursor, setPositionCursor] = useState({ x: "", y: "" });
   const handleMouseMove = (e: MouseEvent) => {
     setPositionCursor({
-      x: (e.clientX + 5).toString().concat("px"),
+      x: e.clientX.toString().concat("px"),
       y: (e.clientY - 5).toString().concat("px"),
     });
   };

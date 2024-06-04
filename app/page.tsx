@@ -37,8 +37,8 @@ export default function Home() {
               className={`showIt block text-center text-9xl  font-extrabold text-shadow-lg firstName ${
                 jakarta.className
               }  text-transparent
-        bg-clip-text bg-gradient-to-r from-[#c6c6a7] via-[#C9CAC0] to-[#c6c6a7] ${
-          darkMode && "showShadow"
+        bg-clip-text bg-gradient-to-r from-[#f4f4d5] via-[#e0e1d5] to-[#f4f4d5] ${
+          darkMode && "showShadow bg-white"
         }`}
             />
             <FlipAnimation
@@ -46,16 +46,16 @@ export default function Home() {
               className={`showIt text-5xl font-extrabold lastName ${
                 jakarta.className
               }  text-transparent
-        bg-clip-text bg-gradient-to-r from-[#c6c6a7] via-[#C9CAC0] to-[#c6c6a7] ${
-          darkMode && "text-white "
+        bg-clip-text bg-gradient-to-r from-[#f4f4d5] via-[#e0e1d5] to-[#f4f4d5] ${
+          darkMode && "text-white bg-white"
         }`}
             />
           </>
         )}
 
         <p
-          className={`showIt text-white whatIcanDo text-2xl py-2 pb-28 tracking-wide ${
-            darkMode ? "text-[#d6d7d7df]" : "text-[#ffffff]"
+          className={`showIt whatIcanDo text-2xl py-2 pb-28 tracking-wide ${
+            darkMode ? "text-[#d6d7d7c9]" : "text-[#eaeaea]"
           }`}
         >
           Passionate

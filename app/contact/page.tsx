@@ -29,9 +29,7 @@ const Contact = () => {
     <div className="contactSection border-red-400 w-[600px] h-[100%]  flex flex-col justify-center">
       <div
         ref={responseRef}
-        className={`responseDiv absolute px-5 py-2 left-[-100%] transition-all ease-in-out duration-500  rounded-xl rounded-tl-none bottom-32 z-10 text-white  ${
-          darkMode ? "bg-[#3b7c8be8]" : "bg-[#c1c1b1d7]"
-        }`}
+        className={`responseDiv absolute px-5 py-2 left-[-100%] transition-all ease-in-out duration-500  rounded-xl rounded-tl-none bottom-32 z-10 text-white bg-[#cc0000] `}
       ></div>
       <div className="letsTalkContainer relative">
         {/* <span className="absolute letsTalkSpan top-[-5px] left-0 text-white text-5xl mb-5">
@@ -58,6 +56,7 @@ const Contact = () => {
               }
 
               if (responseRef.current) {
+                responseRef.current.style.backgroundColor = "#4CAF50";
                 responseRef.current.innerHTML =
                   "Your email has been successfully delivered to my inbox. <br/> Thank you for reaching out!";
                 responseRef.current.style.left = "20px";
@@ -67,7 +66,7 @@ const Contact = () => {
                     responseRef.current.style.left = "-100%";
                   }
                   router.push("/");
-                }, 4000);
+                }, 5000);
               }
             })
             .catch(() => {
@@ -91,6 +90,7 @@ const Contact = () => {
           ref={nameRef}
           className="entry customInput px-5 py-3 transition-all duration-300 rounded-xl rounded-tl-none bg-[#D9D9D9] bg-opacity-40 
         focus:bg-opacity-20 placeholder-white placeholder:opacity-70 text-white outline-none w-[100%]"
+          autoComplete="off"
           type="text"
           placeholder="Full Name"
           name="name"
@@ -99,6 +99,7 @@ const Contact = () => {
           required
         />
         <input
+          autoComplete="off"
           ref={emailRef}
           className=" entry customInput px-5 py-3 transition-all duration-300 rounded-xl rounded-tl-none bg-[#D9D9D9] bg-opacity-40
         focus:bg-opacity-20 placeholder-white placeholder:opacity-70 text-white outline-none w-[100%]"
