@@ -6,6 +6,9 @@ import Link from "next/link";
 import { before } from "node:test";
 import "./nav.css";
 import { FaBowlingBall } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa6";
+import { AiFillGithub } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 import TransitionLink from "@/app/components/transitionLink";
 const Nav = ({
@@ -104,7 +107,7 @@ const Nav = ({
           ></span>
         </button>
         <div
-          className={`customMenu transition-all duration-500 ${
+          className={`customMenu relative flex-col justify-between h-full transition-all duration-500 ${
             darkMode ? "bg-[#000000ae]" : "bg-[#f5f5dc7e]"
           } ${
             showMenu
@@ -145,6 +148,41 @@ const Nav = ({
               onClick={() => setShowMenu(!showMenu)}
             >
               <TransitionLink href="/contact" label="Contact" />
+            </li>
+          </ul>
+
+          <ul className="absolute flex-col  w-[100%] gap-3 bottom-[12%] ml-10 ">
+            <li className="w-[fit-content] ">
+              <Link
+                className="cursor-pointer flex items-center gap-2"
+                target="_blank"
+                href={"https://medium.com/@yassineelhajjamidev"}
+              >
+                <FaMedium />
+                Medium
+              </Link>
+            </li>
+            <li className="w-[fit-content]  ">
+              <Link
+                className="cursor-pointer flex items-center gap-2"
+                target="_blank"
+                href={
+                  "https://www.linkedin.com/in/yassine-el-hajjami-281446295/"
+                }
+              >
+                <FaLinkedinIn />
+                Linkedin
+              </Link>
+            </li>
+            <li className="w-[fit-content] ">
+              <Link
+                className="cursor-pointer flex items-center gap-2"
+                target="_blank"
+                href={"https://github.com/YassineElHajjami0"}
+              >
+                <AiFillGithub />
+                Github
+              </Link>
             </li>
           </ul>
         </div>
