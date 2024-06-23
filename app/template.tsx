@@ -11,7 +11,7 @@ const Template = ({ children }: { children: React.ReactNode }) => {
   const { darkMode } = useGenerationStore();
 
   return (
-    <div className="flex-grow">
+    <div className="">
       <div
         id="transition-element"
         className={` w-screen h-screen ${
