@@ -25,7 +25,7 @@ export default function Home() {
     <main className="flex-grow items-end ">
       <div
         style={{ zIndex: -1 }}
-        className={`absolute w-full h-[100%] top-0 left-0   bg-gray-500`}
+        className={`absolute w-full min-h-[100%] top-0 left-0   bg-gray-500`}
       >
         <AuroraBackground children={<Avatar />} />
       </div>
