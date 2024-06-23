@@ -29,6 +29,7 @@ const Card = ({
 
   return (
     <div
+      key={index}
       style={{
         backgroundImage: `url(${project.image})`,
         backgroundSize: "cover",
@@ -70,8 +71,9 @@ const Card = ({
         {project.done && (
           <>
             <div className="tools flex gap-2 flex-wrap text-white py-1">
-              {project.tools.map((tool) => (
+              {project.tools.map((tool, index) => (
                 <span
+                  key={index}
                   className={`p-1 rounded-md ${
                     darkMode ? "bg-[#e2e6e75d]" : "bg-[#c2c2aac8]"
                   }`}

@@ -19,8 +19,9 @@ export function Model(props) {
     group.current.position.x = -0.08;
     group.current.position.z = 0.2;
   }, []);
+
   return (
-    <group dispose={null} ref={group} className="canvasModel">
+    <group dispose={null} ref={group}>
       <group>
         <primitive object={nodes.Hips} />
         <skinnedMesh

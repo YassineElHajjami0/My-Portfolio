@@ -19,7 +19,6 @@ const Childrens = ({ children }: { children: React.ReactNode }) => {
     }, 12000);
   }, []);
 
-
   return (
     <>
       {loading && (
@@ -57,12 +56,12 @@ const Childrens = ({ children }: { children: React.ReactNode }) => {
       >
         <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
         {children}
-        <footer className="customFooter z-[4]">
+        <footer className="customFooter z-[4] mb-3">
           <div
             className={`text-center iconsHolder 
             flex gap-1 text-2xl text-white
               bg-[#bec9cc6d] hover:bg-[#a0a3a439]"
-               border-[0.5px] border-white border-solid rounded-lg mb-4
+               border-[0.5px] border-white border-solid rounded-lg mb-2
             duration-300`}
           >
             <Link

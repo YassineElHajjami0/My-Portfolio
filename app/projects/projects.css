@@ -172,7 +172,7 @@
 @media (max-width: 1024px) {
   .projectSection {
     width: 500px;
-    height: 420px;
+    height: 350px;
     gap: 20px;
   }
   .cardContainer {
@@ -182,7 +182,7 @@
 }
 @media (max-width: 768px) {
   .projectSection {
-    height: 600px;
+    height: 500px;
     width: 430px;
   }
   .projectHeader {
@@ -195,7 +195,7 @@
 @media (max-width: 425px) {
   .projectSection {
     width: 350px;
-    height: 400px;
+    height: 350px;
   }
   .cardContainer {
     height: 290px;

@@ -9,6 +9,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { AxesHelper, Texture, TextureLoader } from "three";
 import Setup from "./Setup";
 import { useGenerationStore } from "./context";
+import "./globals.css";
 
 const Avatar = () => {
   const { darkMode } = useGenerationStore();
@@ -28,9 +29,10 @@ const Avatar = () => {
 
   return (
     <Canvas
+      className="canvasModel"
       ref={ref}
       camera={{
-        position: [1, 2.3, 9],
+        position: [1, 3.5, 9],
         fov: fov,
       }}
       style={{

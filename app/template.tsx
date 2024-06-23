@@ -2,41 +2,19 @@
 import React, { useEffect, useState } from "react";
 import { animatePageIn } from "./animations";
 import { useGenerationStore } from "./context";
+import "./globals.css";
 
 const Template = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     animatePageIn();
   }, []);
   const { darkMode } = useGenerationStore();
-  const [positionCursor, setPositionCursor] = useState({ x: "", y: "" });
-  const handleMouseMove = (e: MouseEvent) => {
-    setPositionCursor({
-      x: e.clientX.toString().concat("px"),
-      y: (e.clientY - 5).toString().concat("px"),
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <div className="flex-grow">
       <div
-        className="followCursor z-10 "
-        style={{
-          left: positionCursor.x,
-          top: positionCursor.y,
-          backgroundColor: "white",
-        }}
-      ></div>
-      <div
         id="transition-element"
-        className={`w-screen h-screen ${
+        className={` w-screen h-screen ${
           darkMode ? "bg-[#0d0d0d]" : "bg-[#acab91]"
         }  z-10 fixed top-0 left-0`}
       ></div>

@@ -183,9 +183,8 @@ ul li {
 }
 .showLi {
   animation: showLi 1s 1 ease-out;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.198);
-  margin-bottom: 40px;
-  padding-bottom: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   width: 90%;
 }
 @keyframes showLi {

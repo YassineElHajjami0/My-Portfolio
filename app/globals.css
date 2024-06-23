@@ -19,10 +19,6 @@
     background-color: rgba(255, 255, 255, 0.218);
     color: rgba(255, 255, 255, 0.946);
   }
-  cursor: none;
-}
-.canvasModel {
-  animation: showsmooth 10s ease;
 }
 @keyframes showsmooth {
   0% {
@@ -73,6 +69,7 @@
   box-sizing: content-box;
   padding: 5px;
 }
+
 @media (max-width: 2265px) {
   .customContainer {
     padding: 0 300px;
@@ -103,12 +100,23 @@
   }
 }
 @media (max-width: 768px) {
+  * {
+    cursor: default;
+  }
   .firstName {
     font-size: 5rem;
   }
   .whatIcanDo {
     padding-bottom: 5rem;
     width: 400px;
+  }
+  .followCursor {
+    display: none;
+  }
+
+  .icon {
+    font-size: 18px;
+    padding: 2px;
   }
 }
 @media (max-width: 425px) {
@@ -119,12 +127,15 @@
     font-size: 4rem;
   }
   .whatIcanDo {
-    padding-bottom: 5rem;
     width: 350px;
+    padding-bottom: 7rem;
   }
   .iconsHolder {
     padding: 6px;
     font-size: 18px;
+  }
+  .canvasModel {
+    padding-bottom: 120px;
   }
 }
 @media (max-width: 425px) {

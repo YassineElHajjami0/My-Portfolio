@@ -14,7 +14,7 @@ const TransitionLink = ({ href, label }: { href: string; label: string }) => {
   };
   return (
     <button
-      className="cursor-none absolute  w-[100%] h-[100%] z-[2] left-0 text-left"
+      className="cursor-pointer absolute  w-[100%] h-[100%] z-[2] left-0 text-left"
       onClick={handleClick}
     >
       {label}
